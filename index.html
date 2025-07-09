@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service by the Sea - Professional Cleaning & Garden Services</title>
+    <meta name="description" content="Professional end of tenancy cleaning, communal area maintenance, garden services, and handyman solutions across Brighton, Hove, and surrounding areas.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        yellow: {
+                            50: '#fefce8',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#eab308',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="logo.png" alt="Service by the Sea Logo" class="w-16 h-16 rounded-lg">
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">Service by the Sea</h1>
+                        <p class="text-sm text-gray-600">Professional Cleaning & Garden Services</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#services" class="text-gray-700 hover:text-yellow-500 transition-colors font-medium">Services</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-yellow-500 transition-colors font-medium">Gallery</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-yellow-500 transition-colors font-medium">Reviews</a>
+                    <a href="#contact" class="text-gray-700 hover:text-yellow-500 transition-colors font-medium">Contact</a>
+                    <a href="booking.html" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-md font-medium transition-colors">Book Now</a>
+                </nav>
+                <!-- Mobile menu button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#services" class="text-gray-700 hover:text-yellow-500 transition-colors font-medium">Services</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-yellow-500 transition-colors font-medium">Gallery</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-yellow-500 transition-colors font-medium">Reviews</a>
+                    <a href="#contact" class="text-gray-700 hover:text-yellow-500 transition-colors font-medium">Contact</a>
+                    <a href="booking.html" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-md font-medium transition-colors text-center">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-medium mb-6 inline-block">Professional Cleaning Services</span>
+                    <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        Quality Cleaning & Garden Services by the Sea
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Professional end of tenancy cleaning, communal area maintenance, garden services, and handyman solutions
+                        across Brighton, Hove, and surrounding areas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="booking.html" class="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-md font-medium text-center transition-colors text-lg">
+                            Book Service Now
+                        </a>
+                        <a href="tel:07780114172" class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-md font-medium text-center hover:bg-gray-50 transition-colors flex items-center justify-center">
+                            <span class="mr-2">📞</span>
+                            Call: 07780 114172
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-6 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-2 text-lg">✓</span>
+                            Fully Insured
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-2 text-lg">✓</span>
+                            Deposit Guarantee
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-2 text-lg">✓</span>
+                            Same Day Service
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=700&fit=crop&crop=center" alt="Professional cleaning service" class="rounded-lg shadow-2xl w-full h-auto">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg border">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="flex text-yellow-500 text-lg">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <span class="text-sm font-semibold">5.0 Rating</span>
+                        </div>
+                        <p class="text-xs text-gray-600">Based on 50+ reviews</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive cleaning and maintenance solutions tailored to your needs
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card border border-gray-200 rounded-xl p-8 bg-white">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">✨</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">End of Tenancy Cleaning</h3>
+                        <p class="text-gray-600 mb-4">Professional deep cleaning to ensure you get your deposit back</p>
+                        <div class="text-3xl font-bold text-yellow-600">From £150</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Deep clean all rooms
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Kitchen appliances
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Bathroom sanitization
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Deposit guarantee
+                        </li>
+                    </ul>
+                    <button onclick="openContactForm()" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black py-3 px-4 rounded-md font-medium transition-colors">
+                        Enquire About This Service
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card border border-gray-200 rounded-xl p-8 bg-white">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">👥</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Communal Cleaning</h3>
+                        <p class="text-gray-600 mb-4">Regular cleaning services for shared spaces and common areas</p>
+                        <div class="text-3xl font-bold text-yellow-600">From £80/visit</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Stairwells & hallways
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Entrance areas
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Communal kitchens
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Regular maintenance
+                        </li>
+                    </ul>
+                    <button onclick="openContactForm()" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black py-3 px-4 rounded-md font-medium transition-colors">
+                        Enquire About This Service
+                    </button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card border border-gray-200 rounded-xl p-8 bg-white">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🌿</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Garden Services</h3>
+                        <p class="text-gray-600 mb-4">Complete garden maintenance and landscaping solutions</p>
+                        <div class="text-3xl font-bold text-yellow-600">From £60</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Lawn mowing
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Hedge trimming
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Garden clearance
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Seasonal maintenance
+                        </li>
+                    </ul>
+                    <button onclick="openContactForm()" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black py-3 px-4 rounded-md font-medium transition-colors">
+                        Enquire About This Service
+                    </button>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card border border-gray-200 rounded-xl p-8 bg-white">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🔧</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Handyman Services</h3>
+                        <p class="text-gray-600 mb-4">General maintenance and repair services for your property</p>
+                        <div class="text-3xl font-bold text-yellow-600">From £40/hour</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Minor repairs
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Painting & decorating
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            Furniture assembly
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="text-green-500 mr-3 text-lg">✓</span>
+                            General maintenance
+                        </li>
+                    </ul>
+                    <button onclick="openContactForm()" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black py-3 px-4 rounded-md font-medium transition-colors">
+                        Enquire About This Service
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Our Work</h2>
+                <p class="text-xl text-gray-600">See the quality of our cleaning and garden services</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="gallery-item relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Kitchen cleaning" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Kitchen Deep Clean</span>
+                    </div>
+                </div>
+                <div class="gallery-item relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=300&fit=crop" alt="Bathroom cleaning" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Bathroom Sanitization</span>
+                    </div>
+                </div>
+                <div class="gallery-item relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop" alt="Garden maintenance" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Garden Maintenance</span>
+                    </div>
+                </div>
+                <div class="gallery-item relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=300&fit=crop" alt="Living room cleaning" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Living Room Clean</span>
+                    </div>
+                </div>
+                <div class="gallery-item relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop" alt="Communal area cleaning" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Communal Areas</span>
+                    </div>
+                </div>
+                <div class="gallery-item relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1585128792020-803d29415281?w=400&h=300&fit=crop" alt="Garden clearance" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <span class="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Garden Clearance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600">Don't just take our word for it</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 text-lg">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-600">Brighton</p>
+                        </div>
+                        <div class="flex text-yellow-500 text-lg">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium mb-4 inline-block">End of Tenancy Cleaning</span>
+                    <p class="text-gray-700 italic leading-relaxed">"Absolutely fantastic service! Jordan and his team did an incredible job with our end of tenancy clean. Got our full deposit back thanks to their thorough work."</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 text-lg">Michael Chen</h4>
+                            <p class="text-sm text-gray-600">Hove</p>
+                        </div>
+                        <div class="flex text-yellow-500 text-lg">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium mb-4 inline-block">Communal Cleaning</span>
+                    <p class="text-gray-700 italic leading-relaxed">"Regular communal cleaning service has transformed our building. Professional, reliable, and great value for money. Highly recommend!"</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 text-lg">Emma Williams</h4>
+                            <p class="text-sm text-gray-600">Worthing</p>
+                        </div>
+                        <div class="flex text-yellow-500 text-lg">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium mb-4 inline-block">Garden Maintenance</span>
+                    <p class="text-gray-700 italic leading-relaxed">"Garden maintenance service is excellent. They've kept our communal gardens looking pristine all year round. Very pleased with the results."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Ready to book a service or have questions? We're here to help!
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center">
+                                <span class="text-white text-2xl">📞</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Phone</h4>
+                                <p class="text-gray-600 text-lg">07780 114172</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center">
+                                <span class="text-white text-2xl">✉️</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Email</h4>
+                                <p class="text-gray-600 text-lg">jordan@servicebythesea.co.uk</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center">
+                                <span class="text-white text-2xl">📍</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Service Area</h4>
+                                <p class="text-gray-600 text-lg">Brighton, Hove & Surrounding Areas</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center">
+                                <span class="text-white text-2xl">🕒</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Working Hours</h4>
+                                <p class="text-gray-600 text-lg">Monday - Saturday: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/447780114172" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-md font-medium text-center transition-colors text-lg">
+                            💬 WhatsApp Us
+                        </a>
+                        <button onclick="showQR()" class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-md font-medium hover:bg-gray-50 transition-colors text-lg">
+                            📱 QR Code
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
+                        <form id="contactForm" onsubmit="submitForm(event)">
+                            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                                    <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                    <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                    <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Service Required</label>
+                                    <select class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                                        <option value="">Select a service</option>
+                                        <option value="end-of-tenancy">End of Tenancy Cleaning</option>
+                                        <option value="communal-cleaning">Communal Cleaning</option>
+                                        <option value="garden-services">Garden Services</option>
+                                        <option value="handyman">Handyman Services</option>
+                                        <option value="rubbish-clearance">Rubbish Clearance</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                                <textarea required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent" placeholder="Please provide details about your requirements, property size, preferred dates, etc."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black py-4 px-4 rounded-md font-medium transition-colors text-lg">
+                                📧 Send Enquiry
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="logo.png" alt="Service by the Sea" class="w-10 h-10 rounded">
+                        <span class="text-xl font-bold">Service by the Sea</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Professional cleaning and garden services across Brighton, Hove, and surrounding areas.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-6 text-lg">Services</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li>End of Tenancy Cleaning</li>
+                        <li>Communal Cleaning</li>
+                        <li>Garden Maintenance</li>
+                        <li>Handyman Services</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-6 text-lg">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="booking.html" class="hover:text-yellow-500 transition-colors">Book Now</a></li>
+                        <li><a href="#services" class="hover:text-yellow-500 transition-colors">Services</a></li>
+                        <li><a href="#gallery" class="hover:text-yellow-500 transition-colors">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-yellow-500 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-6 text-lg">Contact Info</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li>07780 114172</li>
+                        <li>jordan@servicebythesea.co.uk</li>
+                        <li>www.servicebythesea.co.uk</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Service by the Sea. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- QR Code Modal -->
+    <div id="qrModal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-xl max-w-md mx-4 shadow-2xl">
+            <h3 class="text-2xl font-bold mb-6 text-center">Scan to WhatsApp</h3>
+            <div class="text-center">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/447780114172" alt="WhatsApp QR Code" class="mx-auto mb-6 rounded-lg">
+                <p class="text-sm text-gray-600 mb-6">Scan this QR code with your phone to start a WhatsApp conversation</p>
+                <div class="flex gap-4">
+                    <button onclick="hideQR()" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-4 rounded-md font-medium hover:bg-gray-50 transition-colors">Close</button>
+                    <a href="https://wa.me/447780114172" target="_blank" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded-md text-center font-medium transition-colors">Open WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function openContactForm() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            alert('Thank you for your enquiry! We\'ll get back to you within 24 hours.');
+            document.getElementById('contactForm').reset();
+        }
+
+        function showQR() {
+            document.getElementById('qrModal').classList.remove('hidden');
+            document.getElementById('qrModal').classList.add('flex');
+        }
+
+        function hideQR() {
+            document.getElementById('qrModal').classList.add('hidden');
+            document.getElementById('qrModal').classList.remove('flex');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('qrModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideQR();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
